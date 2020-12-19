@@ -1,4 +1,22 @@
-h1 {
-color: blue;
-
-}
+#startPage{
+    text-align: center;
+    }
+    
+    a{
+        color:darkolivegreen;
+    }
+    
+    a:hover{
+        color: black;
+    }
+    
+    #startQuiz{
+        background-color: darkolivegreen;
+        color: whitesmoke;
+        width: 200px;
+    }
+    
+    #startQuiz:hover{
+        background-color:black;
+    
+    }

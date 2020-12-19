@@ -1,1 +1,1 @@
-alert("test that the link for JS is working");
+//alert("test that the link for JS is working");
