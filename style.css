@@ -1,22 +1,103 @@
-#startPage{
+body {
+    font-family: "Josefin Slab", serif;
     text-align: center;
-    }
+    /*background-color: rgb(199, 133, 54);*/
+    background-image: url("./Assets/cool-background.png");
+    color: rgb(0, 234, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  .wrapper {
+    margin: 100px auto 0 auto;
+    max-width: 600px;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  .start {
+    text-align: center;
+    margin-top: 50%;
+ 
     
-    a{
-        color:darkolivegreen;
-    }
-    
-    a:hover{
-        color: black;
-    }
-    
-    #startQuiz{
-        background-color: darkolivegreen;
-        color: whitesmoke;
-        width: 200px;
-    }
-    
-    #startQuiz:hover{
-        background-color:black;
-    
-    }
+  }
+
+  .headOne {
+    font-size: 100px;
+
+  }
+  
+  
+  .scores {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: deepskyblue;
+  }
+  
+  .feedback {
+    font-style: italic;
+    font-size: 120%;
+    margin-top: 20px;
+    padding-top: 10px;
+    color: rgb(131, 0, 0);
+    border-top: 2px solid rgb(201, 193, 193);
+  }
+  
+  .timer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: rgb(35, 35, 255);
+  }
+  
+  a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.1s;
+  }
+  
+  a:hover {
+    color: #1f1f4b;
+  }
+  
+  button {
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    font-family: fantasy;
+    font-size: 100%;
+    background-color: rgb(0, 30, 128);
+    border-radius: 5px;
+    padding: 2px 10px;
+    color: rgb(0, 234, 255);
+    border: 0;
+    transition: background-color 0.1s;
+  }
+  
+  button:hover {
+    background-color: silver;
+  }
+  
+  .choices button {
+    display: block;
+  }
+  
+  input[type="text"] {
+    font-size: 100%;
+  }
+  
+  ol {
+    padding-left: 0px;
+    max-height: 400px;
+    overflow: auto;
+  }
+  
+  li {
+    padding: 5px;
+    list-style: decimal inside none;
+  }
+  
+  li:nth-child(odd) {
+    background-color: #dfdae7;
+  }
