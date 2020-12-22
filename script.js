@@ -86,11 +86,11 @@ var questions = [
       answer: "True"
     }
   ];
-
+ 
 
   
 
-  // DOM elements
+  // DOM elements variablse
     var questionsEl = document.querySelector(
     "#questions");
    var timerEl = document.querySelector("#time");
@@ -105,7 +105,7 @@ var questions = [
    var feedbackEl = document.querySelector(
     "#feedback");
    
-   // quiz state variables
+   // quiz  variables
    var currentQuestionIndex = 0;
    var time = questions.length * 15;
    var timerId;
@@ -176,11 +176,11 @@ var questions = [
      timerEl.textContent = time;
      feedbackEl.textContent = "Wrong!";
      feedbackEl.style.color = "red";
-     feedbackEl.style.fontSize = "400%";
+     feedbackEl.style.fontSize = "500%";
     } else {
      feedbackEl.textContent = "Correct!";
      feedbackEl.style.color = "green";
-     feedbackEl.style.fontSize = "400%";
+     feedbackEl.style.fontSize = "500%";
     }
     
     // flash right/wrong feedback
@@ -234,9 +234,10 @@ var questions = [
    function saveHighscore() {
     // get value of input box
     var initials = initialsEl.value.trim();
-    
+    initialsEl.value = "";
+
     if (initials !== "") {
-     // get saved scores from localstorage, or if not any, set to empty array
+     // get saved scores from localstorage, if not any: set to empty array
      var highscores =
       JSON.parse(window.localStorage.getItem(
        "highscores")) || [];
@@ -251,9 +252,15 @@ var questions = [
      highscores.push(newScore);
      window.localStorage.setItem("highscores",
       JSON.stringify(highscores));
+
+      for(var i=0;i<highscores.length;i++){
+        var li = document.createElement("li");
+        li.textContent = highscores[i].initials + ": "+highscores[i].score;
+        document.getElementById("highscores").append(li);
+      }
      
      // redirect to next page
-     window.location.href = "score.html";
+     //window.location.href = "score.html";
     }
    }
    
@@ -263,11 +270,18 @@ var questions = [
      saveHighscore();
     }
    }
+
+   function clearScore(){
+    localStorage.clear();
+    saveHighscore();
+   }
    
    // submit initials
    submitBtn.onclick = saveHighscore;
    
    // start quiz
    startBtn.onclick = startQuiz;
+
+   document.getElementById("clear").onclick = clearScore;
    
-   initialsEl.onkeyup = checkForEnter;
+  
